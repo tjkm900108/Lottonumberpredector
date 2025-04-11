@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Lotto Numbers Predictor Expert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .col-lg-4, .col-md-6, .col-sm-12 {
+            margin: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .button-group {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        .result {
+            margin-top: auto;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* Title and Description */
+        .site-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .site-description {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="site-title">Welcome to Lotto Numbers Predictor Expert</h1>
+        <p class="site-description">This platform is designed to help you generate random lotto numbers. Enjoy a seamless experience with AI-powered predictions brought to you by Tumelo John Keitumetse Modisenyane.</p>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <h2>36 Ball Set</h2>
+                    <p>Generate numbers from 1 to 6</p>
+                    <div class="button-group">
+                        <button onclick="generateNumbers(36, 1, 'result-36')">Generate 1 Number</button>
+                        <button onclick="generateNumbers(36, 2, 'result-36')">Generate 2 Numbers</button>
+                        <button onclick="generateNumbers(36, 3, 'result-36')">Generate 3 Numbers</button>
+                        <button onclick="generateNumbers(36, 4, 'result-36')">Generate 4 Numbers</button>
+                        <button onclick="generateNumbers(36, 5, 'result-36')">Generate 5 Numbers</button>
+                 
+                    </div>
+                    <div id="result-36" class="result"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <h2>52 Ball Set</h2>
+                    <p>Generate numbers from 1 to 6</p>
+                    <div class="button-group">
+                        <button onclick="generateNumbers(52, 1, 'result-52')">Generate 1 Number</button>
+                        <button onclick="generateNumbers(52, 2, 'result-52')">Generate 2 Numbers</button>
+                        <button onclick="generateNumbers(52, 3, 'result-52')">Generate 3 Numbers</button>
+                        <button onclick="generateNumbers(52, 4, 'result-52')">Generate 4 Numbers</button>
+                        <button onclick="generateNumbers(52, 5, 'result-52')">Generate 5 Numbers</button>
+                        <button onclick="generateNumbers(52, 6, 'result-52')">Generate 6 Numbers</button>
+                    </div>
+                    <div id="result-52" class="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateNumbers(ballSet, numberCount, resultId) {
+            const numbers = [];
+            for (let i = 0; i < numberCount; i++) {
+                let number;
+                do {
+                    number = Math.floor(Math.random() * ballSet) + 1;
+                } while (numbers.includes(number));
+                numbers.push(number);
+            }
+            const resultDiv = document.getElementById(resultId);
+            resultDiv.innerText = `Generated Numbers: ${numbers.join(", ")}`;
+        }
+    </script>
+</body>
+</html>
